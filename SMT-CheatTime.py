@@ -3,6 +3,7 @@ import shutil
 import winreg
 import re
 import time
+import sys
 
 def find_SMT():
     try:
@@ -35,6 +36,7 @@ def inject_SMTCT():
     SMT = find_SMT()
     if not SMT:
         print("[-] Game not found!")
+        time.sleep(2)
         return
         
     print("[+] Injecting files...")
@@ -53,6 +55,7 @@ def inject_SMTCT():
     if os.path.exists("SMT-CHEATTIME.dll"):
         shutil.copy2("SMT-CHEATTIME.dll", plugins)
         print("[+] Injected Successfully")
+        time.sleep(0.4)
         os.system("cls")
         main()
     else:
@@ -76,17 +79,20 @@ def wipe_SMTCT():
     if os.path.exists(bep_path):
         shutil.rmtree(bep_path)
     print("[-] Wiped Complete\n")
+    time.sleep(0.4)
     os.system("cls")
     main()
 
 def main():
-    while True:
+    while True:    
+        os.system("cls")
         os.system("title SMT.CheatTime!")
         print(">> SMT.CheatTime Loader! <<")
         print("=================================")
         print("1. [+] Inject Cheat")
         print("2. [-] Clean SuperMarket Together")
         print("3. [+] Check Updates")
+        print("4. [-] Exit")
         print("=================================")
         print("[!] - Github : saiitanaa\n")
         user = input(">> ")
@@ -97,8 +103,11 @@ def main():
             wipe_SMTCT()
         elif user == "3":
             os.system("start https://github.com/saiitanaa/SMT.CheatTime/releases/latest")
+        elif user == "4":
+            sys.exit()
         else:
             print("Invalid choose...\n")
+            time.sleep(1)
 
 if __name__ == "__main__":
     main()
