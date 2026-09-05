@@ -6,7 +6,7 @@ using HarmonyLib;
 
 namespace SMT.CheatTime
 {
-    [BepInPlugin("com.saysaa.smt_cheattime", "SMT CheatTime", "1.5")]
+    [BepInPlugin("com.saysaa.smt_cheattime", "SMT CheatTime", "1.6")]
     public class TrainerPlugin : BaseUnityPlugin
     {
         private bool showMenu = true;
@@ -151,7 +151,7 @@ namespace SMT.CheatTime
             float boxWidth = 250f;
             float boxHeight = 350f;
 
-            GUI.Box(new Rect(x, y, boxWidth, boxHeight), "SMT.CheatTime! 1.5");
+            GUI.Box(new Rect(x, y, boxWidth, boxHeight), "SMT.CheatTime! 1.6");
 
             if (GUI.Button(new Rect(x + 10, y + 30, 110, 25), "Cheats")) currentTab = 0;
             if (GUI.Button(new Rect(x + 130, y + 30, 110, 25), "Settings")) currentTab = 1;
